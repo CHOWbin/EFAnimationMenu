@@ -25,6 +25,6 @@
 
 @property (nonatomic, weak) id <EFItemViewDelegate>delegate;
 
-- (instancetype)initWithNormalImage:(NSString *)normal highlightedImage:(NSString *)highlighted tag:(NSInteger)tag;
+- (instancetype)initWithNormalImage:(NSString *)normal highlightedImage:(NSString *)highlighted tag:(NSInteger)tag title:(NSString *)title;
 
 @end

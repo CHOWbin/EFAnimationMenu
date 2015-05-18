@@ -1,6 +1,6 @@
 # EFAnimationMenu
 This is a rotating menu, it is very convenient to use.
-![cmd-markdown-logo](http://ww1.sinaimg.cn/mw1024/a47c92bdjw1es89m4cljsg20a30ib7wh.gif)
+![cmd-markdown-logo](http://ww3.sinaimg.cn/bmiddle/a47c92bdjw1es8d0dzmayg20a30ibwt7.gif)
 # Communication
 * If you found a bug, and can provide steps to reliably reproduce it, open an issue.
 * If you have a feature request, open an issue.

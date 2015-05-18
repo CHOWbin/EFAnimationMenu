@@ -42,7 +42,8 @@ CATransform3D rotationTransform1[PHOTONUM];
 
 - (void)configViews {
     
-    self.view.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"121"]];
+    self.view.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"common_background"]];
+    NSArray *dataArray = @[@"exer_icon_biology", @"exer_icon_chemistry", @"exer_icon_chinese", @"exer_icon_english", @"exer_icon_geography"];
     
     CGFloat centery = self.view.center.y - 50;
     CGFloat centerx = self.view.center.x;
@@ -50,8 +51,8 @@ CATransform3D rotationTransform1[PHOTONUM];
     for (NSInteger i = 0;i < PHOTONUM;i++) {
         CGFloat tmpy =  centery + RADIUS*cos(2.0*M_PI *i/PHOTONUM);
         CGFloat tmpx =	centerx - RADIUS*sin(2.0*M_PI *i/PHOTONUM);
-        EFItemView *view = [[EFItemView alloc] initWithNormalImage:[NSString stringWithFormat:@"icon%@",@(i)] highlightedImage:[NSString stringWithFormat:@"icon%@",@(i)] tag:TAGSTART+i];
-        view.frame = CGRectMake(0.0, 0.0,120,140);
+        EFItemView *view = [[EFItemView alloc] initWithNormalImage:dataArray[i] highlightedImage:[dataArray[i] stringByAppendingFormat:@"%@", @"_hover"] tag:TAGSTART+i title:nil];
+        view.frame = CGRectMake(0.0, 0.0,115,115);
         view.center = CGPointMake(tmpx,tmpy);
         view.delegate = self;
         rotationTransform1[i] = CATransform3DIdentity;
@@ -163,18 +164,20 @@ CATransform3D rotationTransform1[PHOTONUM];
 @property (nonatomic, strong) NSString *normal;
 @property (nonatomic, strong) NSString *highlighted_;
 @property (nonatomic, assign) NSInteger tag_;
+@property (nonatomic, strong) NSString *title;
 
 @end
 
 @implementation EFItemView
 
-- (instancetype)initWithNormalImage:(NSString *)normal highlightedImage:(NSString *)highlighted tag:(NSInteger)tag {
+- (instancetype)initWithNormalImage:(NSString *)normal highlightedImage:(NSString *)highlighted tag:(NSInteger)tag title:(NSString *)title {
     
     self = [super init];
     if (self) {
         _normal = normal;
         _highlighted_ = highlighted;
         _tag_ = tag;
+        _title = title;
         [self configViews];
     }
     return self;
@@ -188,6 +191,9 @@ CATransform3D rotationTransform1[PHOTONUM];
     [self setBackgroundImage:[UIImage imageNamed:_normal] forState:UIControlStateNormal];
     [self setBackgroundImage:[UIImage imageNamed:_highlighted_] forState:UIControlStateHighlighted];
     [self addTarget:self action:@selector(btnTapped:) forControlEvents:UIControlEventTouchUpInside];
+    [self setTitle:_title forState:UIControlStateNormal];
+    [self setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
+    [self.titleLabel setFont:[UIFont systemFontOfSize:30.0]];
 }
 
 - (void)btnTapped:(UIButton *)sender {
