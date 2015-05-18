@@ -23,4 +23,8 @@ This is a rotating menu, it is very convenient to use.
 
 # Feedback
 * Have any problem in use, welcome back to me, you can communicate with me with the following contact
-* QQ: 327592992@qq.com
+* QQMail: 327592992@qq.com
+
+# About author
+
+* With their own strength and speed, go where you want to go!
