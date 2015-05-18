@@ -6,15 +6,17 @@ This is a rotating menu, it is very convenient to use.
 * If you want to contribute, submit a pull request.
 
 # Usage 
+```javascript
 - (void)viewDidLoad {
-[super viewDidLoad];
-// Do any additional setup after loading the view, typically from a nib.
+    [super viewDidLoad];
+    // Do any additional setup after loading the view, typically from a nib.
 
-self.viewController = ({
-EFAnimationViewController *viewController = [[EFAnimationViewController alloc] init];
-[self.view addSubview:viewController.view];
-[self addChildViewController:viewController];
-[viewController didMoveToParentViewController:self];
-viewController;
-});
+    self.viewController = ({
+    EFAnimationViewController *viewController = [[EFAnimationViewController alloc] init];
+    [self.view addSubview:viewController.view];
+    [self addChildViewController:viewController];
+    [viewController didMoveToParentViewController:self];
+    viewController;
+    });
 }
+```
