@@ -1,5 +1,6 @@
 # EFAnimationMenu
-This is a rotating menu, it is very convenient to use.
+* This is a rotating menu, it is very convenient to use.
+* Special thanks to the effect of the original author:czda1100.
 ![cmd-markdown-logo](http://ww3.sinaimg.cn/bmiddle/a47c92bdjw1es8d0dzmayg20a30ibwt7.gif)
 # Communication
 * If you found a bug, and can provide steps to reliably reproduce it, open an issue.
