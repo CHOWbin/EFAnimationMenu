@@ -82,9 +82,9 @@ CATransform3D rotationTransform1[PHOTONUM];
     
     for (NSInteger i = 0;i<PHOTONUM;i++ ) {
         
-        UIImageView *imgview = (UIImageView*)[self.view viewWithTag:TAGSTART+i];
-        [imgview.layer addAnimation:[self moveanimation:TAGSTART+i number:t] forKey:@"position"];
-        [imgview.layer addAnimation:[self setscale:TAGSTART+i clicktag:index] forKey:@"transform"];
+        UIView *view = [self.view viewWithTag:TAGSTART+i];
+        [view.layer addAnimation:[self moveanimation:TAGSTART+i number:t] forKey:@"position"];
+        [view.layer addAnimation:[self setscale:TAGSTART+i clicktag:index] forKey:@"transform"];
         
         NSInteger j = array[index - TAGSTART][i];
         CGFloat Scalenumber = fabs(j - PHOTONUM/2.0)/(PHOTONUM/2.0);
@@ -120,11 +120,11 @@ CATransform3D rotationTransform1[PHOTONUM];
 
 - (CAAnimation*)moveanimation:(NSInteger)tag number:(NSInteger)num {
     // CALayer
-    UIView *imgview = [self.view viewWithTag:tag];
+    UIView *view = [self.view viewWithTag:tag];
     CAKeyframeAnimation* animation;
     animation = [CAKeyframeAnimation animation];
     CGMutablePathRef path = CGPathCreateMutable();
-    CGPathMoveToPoint(path, NULL,imgview.layer.position.x,imgview.layer.position.y);
+    CGPathMoveToPoint(path, NULL,view.layer.position.x,view.layer.position.y);
     
     NSInteger p =  [self getIemViewTag:tag];
     CGFloat f = 2.0*M_PI  - 2.0*M_PI *p/PHOTONUM;
@@ -133,7 +133,7 @@ CATransform3D rotationTransform1[PHOTONUM];
     CGFloat centerx = self.view.center.x;
     CGFloat tmpy =  centery + RADIUS*cos(h);
     CGFloat tmpx =	centerx - RADIUS*sin(h);
-    imgview.center = CGPointMake(tmpx,tmpy);
+    view.center = CGPointMake(tmpx,tmpy);
     
     CGPathAddArc(path,nil,self.view.center.x, self.view.center.y - 50,RADIUS,f+ M_PI/2,f+ M_PI/2 + 2.0*M_PI *num/PHOTONUM,0);
     animation.path = path;
