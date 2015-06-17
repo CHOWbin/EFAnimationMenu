@@ -10,8 +10,7 @@
 
 # Installation
 
-*CocoaPods
-* pod 'EFAnimationMenu', :git => 'https://github.com/jueXying/EFAnimationMenu.git'
+* pod 'EFAnimationMenu', '~> 0.0.8'
 
 # Usage 
 ```javascript
