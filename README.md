@@ -11,11 +11,7 @@
 # Installation
 
 *CocoaPods
-
-*Install CocoaPods if not already available:
-*pod 'EFAnimationMenu', '~> 0.0.1'
-*Install into your Xcode project:
-*pod install
+* pod 'EFAnimationMenu', '~> 0.0.1'
 
 # Usage 
 ```javascript
