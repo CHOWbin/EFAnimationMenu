@@ -8,6 +8,15 @@
 * If you have a feature request, open an issue.
 * If you want to contribute, submit a pull request.
 
+# Installation
+
+*CocoaPods
+
+*Install CocoaPods if not already available:
+*pod 'EFAnimationMenu', '~> 0.0.1'
+*Install into your Xcode project:
+*pod install
+
 # Usage 
 ```javascript
 - (void)viewDidLoad {
