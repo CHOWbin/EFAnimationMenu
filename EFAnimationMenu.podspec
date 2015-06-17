@@ -16,7 +16,7 @@ Pod::Spec.new do |s|
   #
 
   s.name         = "EFAnimationMenu"
-  s.version      = "0.0.2"
+  s.version      = "0.0.3"
   s.summary      = "This is a rotating menu, it is very convenient to use."
 
   s.description  = <<-DESC
@@ -65,7 +65,7 @@ Pod::Spec.new do |s|
   #
 
   # s.platform     = :ios
-  # s.platform     = :ios, "7.0"
+  # s.platform     = :ios, "5.0"
 
   #  When using multiple platforms
   # s.ios.deployment_target = "5.0"
@@ -78,7 +78,7 @@ Pod::Spec.new do |s|
   #  Supports git, hg, bzr, svn and HTTP.
   #
 
-  s.source       = { :git => "https://github.com/jueXying/EFAnimationMenu.git", :tag => "0.0.2" }
+  s.source       = { :git => "https://github.com/jueXying/EFAnimationMenu.git", :tag => "0.0.3" }
 
 
   # ――― Source Code ―――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――― #
